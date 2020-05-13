@@ -1,0 +1,35 @@
+package examenu3;
+import java.util.Scanner;
+public class ExamenU3 {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        float[][] califs;
+        float promedio;
+        
+        System.out.print("Ingresa la cantidad de alumnos: ");
+        califs = new float[entrada.nextInt()][6];
+        
+        for(int fila = 0; fila < califs.length; fila++) {
+            promedio = 0;
+            for(int columna = 0; columna < califs[0].length - 1; columna ++) {
+                System.out.print("Ingresa la calificación " + (columna + 1) + " del alumno " + (fila + 1) + ": ");
+                califs[fila][columna] = entrada.nextFloat();
+            }
+            for(int columna = 0; columna < califs[0].length - 1; columna++) {
+                promedio = promedio + califs[fila][columna];
+            }
+            califs[fila][5] = promedio / 5;
+            System.out.println("--");
+        }
+        System.out.println("\nPromedio de los alumnos");
+        
+        for(int fila = 0; fila < califs.length; fila++) {
+            System.out.println("Promedio del alumno " + (fila + 1) + ": " + califs[fila][5]);
+            
+        }
+        
+        
+    }
+    
+}
